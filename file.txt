@@ -1,8 +1,15 @@
 Hello Shailesh
 Changes have been done!!!
 Hello once again
-change1 - added for login feature.
+change1 :- added for login feature.
 
-Change2 : This is for WI6 on local master to test normal push
-Change3 : On remote master from teammate for CR1 for pull operation
-change4 : bug3 file is updated on remote master
+
+Change2 :- This is for WI6 on local master to test normal push
+Change3 :- On remote master from teammate for CR1 for pull operation
+change4 :- bug3 file is updated on remote master
+
+Change5 :- This is for WI6 on local master to test normal push
+Change7 :- On remote master from teammate for CR1 for pull operation
+
+Change8 :- on local master for WI7.
+
