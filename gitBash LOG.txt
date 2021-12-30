@@ -1,0 +1,605 @@
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git -version
+unknown option: -version
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git --version
+git version 2.34.1.windows.1
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git config --global user.name "Shailesh"
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git config user.name
+Shailesh
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git config --global user.email "shailesh_sharma1@persistent.com"
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git config user.email
+shailesh_sharma1@persistent.com
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git confif --list
+      1 [sig] bash 95! sigpacket::process: Suppressing signal 18 to win32 process (pid 21932)
+git: 'confif' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=Shailesh
+user.email=shailesh_sharma1@persistent.com
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git config --global core.editor "notepad"
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=Shailesh
+user.email=shailesh_sharma1@persistent.com
+core.editor=notepad
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample
+$ git init
+Initialized empty Git repository in C:/Users/HP/Desktop/persistent/sample/.git/
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git add file.txt
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file.txt
+
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git commit -m "file is created hello Shailesh added"
+[master (root-commit) ae4dea7] file is created hello Shailesh added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git commit -a -m "WI1:File updated login feature"
+[master 103304d] WI1:File updated login feature
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log
+commit 103304dbdc7525cbe4affda8fa45addddb2528e6 (HEAD -> master)
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:37:45 2021 +0530
+
+    WI1:File updated login feature
+
+commit ae4dea7e22a61f3fc423053a015665f10b0e741f
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:33:57 2021 +0530
+
+    file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --oneline
+103304d (HEAD -> master) WI1:File updated login feature
+ae4dea7 file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log -1
+commit 103304dbdc7525cbe4affda8fa45addddb2528e6 (HEAD -> master)
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:37:45 2021 +0530
+
+    WI1:File updated login feature
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log -2
+commit 103304dbdc7525cbe4affda8fa45addddb2528e6 (HEAD -> master)
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:37:45 2021 +0530
+
+    WI1:File updated login feature
+
+commit ae4dea7e22a61f3fc423053a015665f10b0e741f
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:33:57 2021 +0530
+
+    file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log -1 --oneline
+103304d (HEAD -> master) WI1:File updated login feature
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --help
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --author "Shailesh"
+commit 103304dbdc7525cbe4affda8fa45addddb2528e6 (HEAD -> master)
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:37:45 2021 +0530
+
+    WI1:File updated login feature
+
+commit ae4dea7e22a61f3fc423053a015665f10b0e741f
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:33:57 2021 +0530
+
+    file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --since="12/29/2021"
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --since="12/28/2021"
+commit 103304dbdc7525cbe4affda8fa45addddb2528e6 (HEAD -> master)
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:37:45 2021 +0530
+
+    WI1:File updated login feature
+
+commit ae4dea7e22a61f3fc423053a015665f10b0e741f
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:33:57 2021 +0530
+
+    file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --untill="12/29/2021"
+fatal: unrecognized argument: --untill=12/29/2021
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --until="12/29/2021"
+commit 103304dbdc7525cbe4affda8fa45addddb2528e6 (HEAD -> master)
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:37:45 2021 +0530
+
+    WI1:File updated login feature
+
+commit ae4dea7e22a61f3fc423053a015665f10b0e741f
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:33:57 2021 +0530
+
+    file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --grep="^C
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --grep="WI1"
+commit 103304dbdc7525cbe4affda8fa45addddb2528e6 (HEAD -> master)
+Author: Shailesh <shailesh_sharma1@persistent.com>
+Date:   Wed Dec 29 16:37:45 2021 +0530
+
+    WI1:File updated login feature
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git diff
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git diff
+diff --git a/file.txt b/file.txt
+index da5980f..b3d93d5 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1,2 +1,2 @@
+-Hello Shailesh
+-Changes have been done!!!
+\ No newline at end of file
++Hello Shailesh######
++Changes have been done!!!
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .exe
+        .jar
+        .jar.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git restore --file.txt
+error: unknown option `file.txt'
+usage: git restore [<options>] [--source=<branch>] <file>...
+
+    -s, --source <tree-ish>
+                          which tree-ish to checkout from
+    -S, --staged          restore the index
+    -W, --worktree        restore the working tree (default)
+    --ignore-unmerged     ignore unmerged entries
+    --overlay             use overlay mode
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git restore --file.txt...
+error: unknown option `file.txt...'
+usage: git restore [<options>] [--source=<branch>] <file>...
+
+    -s, --source <tree-ish>
+                          which tree-ish to checkout from
+    -S, --staged          restore the index
+    -W, --worktree        restore the working tree (default)
+    --ignore-unmerged     ignore unmerged entries
+    --overlay             use overlay mode
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git restore -- file.txt
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .exe
+        .jar
+        .jar.txt
+        gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        .jar.txt
+        gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git add .
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   .jar.txt
+        new file:   gitignore
+
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git commit -m "config gitignore created to skip jar exe ..."
+[master bf74f37] config gitignore created to skip jar exe ...
+ 3 files changed, 8 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .jar.txt
+ create mode 100644 gitignore
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --oneline
+bf74f37 (HEAD -> master) config gitignore created to skip jar exe ...
+103304d WI1:File updated login feature
+ae4dea7 file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git checkout 103304d
+Note: switching to '103304d'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 103304d WI1:File updated login feature
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample ((103304d...))
+$ git log --oneline
+103304d (HEAD) WI1:File updated login feature
+ae4dea7 file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample ((103304d...))
+$ git checkout master
+Previous HEAD position was 103304d WI1:File updated login feature
+Switched to branch 'master'
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --oneline
+bf74f37 (HEAD -> master) config gitignore created to skip jar exe ...
+103304d WI1:File updated login feature
+ae4dea7 file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        fileToBeDeleted.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git add .
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git commit -m "WI2:File tobe deleted to check file evnets tracked in git"
+[master ec9efca] WI2:File tobe deleted to check file evnets tracked in git
+ 1 file changed, 1 insertion(+)
+ create mode 100644 fileToBeDeleted.txt
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --oneline
+ec9efca (HEAD -> master) WI2:File tobe deleted to check file evnets tracked in git
+bf74f37 config gitignore created to skip jar exe ...
+103304d WI1:File updated login feature
+ae4dea7 file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    .jar.txt
+        deleted:    fileToBeDeleted.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git rem fileToBeDeleted.txt
+git: 'rem' is not a git command. See 'git --help'.
+
+The most similar commands are
+        grep
+        remote
+        rm
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git rm fileToBeDeleted.txt
+rm 'fileToBeDeleted.txt'
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git commit -m "WI2:File tobe deleted"
+[master ddfc96f] WI2:File tobe deleted
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 fileToBeDeleted.txt
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    .jar.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --oneline
+ddfc96f (HEAD -> master) WI2:File tobe deleted
+ec9efca WI2:File tobe deleted to check file evnets tracked in git
+bf74f37 config gitignore created to skip jar exe ...
+103304d WI1:File updated login feature
+ae4dea7 file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git revert bf74f37
+hint: Waiting for your editor to close the file... unix2dos: converting file C:/Users/HP/Desktop/persistent/sample/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file C:/Users/HP/Desktop/persistent/sample/.git/COMMIT_EDITMSG to Unix format...
+[master 9571220] Revert "config gitignore created to skip jar exe ..."
+ 3 files changed, 8 deletions(-)
+ delete mode 100644 .gitignore
+ delete mode 100644 .jar.txt
+ delete mode 100644 gitignore
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --oneline
+9571220 (HEAD -> master) Revert "config gitignore created to skip jar exe ..."
+ddfc96f WI2:File tobe deleted
+ec9efca WI2:File tobe deleted to check file evnets tracked in git
+bf74f37 config gitignore created to skip jar exe ...
+103304d WI1:File updated login feature
+ae4dea7 file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git reset
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git reset --help
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git reset --hard ddfc96f
+HEAD is now at ddfc96f WI2:File tobe deleted
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --oneline
+ddfc96f (HEAD -> master) WI2:File tobe deleted
+ec9efca WI2:File tobe deleted to check file evnets tracked in git
+bf74f37 config gitignore created to skip jar exe ...
+103304d WI1:File updated login feature
+ae4dea7 file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git reset --hard Head~2
+HEAD is now at bf74f37 config gitignore created to skip jar exe ...
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
+$ git log --oneline
+bf74f37 (HEAD -> master) config gitignore created to skip jar exe ...
+103304d WI1:File updated login feature
+ae4dea7 file is created hello Shailesh added
+
+HP@LAPTOP-DamOn MINGW64 ~/Desktop/persistent/sample (master)
